@@ -1,0 +1,2 @@
+### Test the hello function
+GET http://localhost:8888/.netlify/functions/hello
