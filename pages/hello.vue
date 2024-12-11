@@ -6,8 +6,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
 const message = ref('');
 
 const fetchMessage = async () => {
@@ -19,4 +17,4 @@ const fetchMessage = async () => {
     console.error('Error fetching message:', error);
   }
 };
-</script>/home/bobleeswagger/netlify-identity-starter/.nuxt
+</script>
