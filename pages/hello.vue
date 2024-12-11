@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>{{ message }}</h1>
-    <button @click="fetchMessage">Fetch Message</button>
+    <button @click="fetchMessage">
+      Fetch Message
+    </button>
   </div>
 </template>
 
@@ -13,7 +15,8 @@ const fetchMessage = async () => {
     const response = await fetch('/.netlify/functions/hello');
     const data = await response.json();
     message.value = data.message;
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Error fetching message:', error);
   }
 };

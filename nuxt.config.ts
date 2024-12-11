@@ -2,18 +2,18 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/eslint',
-  ],
-  compatibilityDate: '2024-11-01',
+  // modules: [
+  //   '@nuxt/eslint',
+  // ],
   devtools: { enabled: true },
-  typescript: {
-    strict: true,
-    typeCheck: true,
-  },
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
-})
+  compatibilityDate: '2024-11-01',
+  // typescript: {
+  //   strict: true,
+  //   typeCheck: true,
+  // },
+  // eslint: {
+  //   config: {
+  //     stylistic: true,
+  //   },
+  // },
+});
