@@ -1,4 +1,5 @@
 <template>
+  <pre>{{ joinURL(withoutTrailingSlash(SITE_URL), 'confirm')  }}</pre>
   <div
     style="
       display: flex;
@@ -33,18 +34,20 @@
   </div>
 </template>
 
-<!-- eslint-disable no-console -->
 <script setup lang="ts">
+import type { PublicRuntimeConfig } from 'nuxt/schema';
+import { joinURL, withoutTrailingSlash } from 'ufo';
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
+const { SITE_URL } = useRuntimeConfig().public as PublicRuntimeConfig;
 
-watchEffect(() => {
+// watchEffect(() => {
   // Can be uncommented in next nuxt version when https://github.com/nuxt/nuxt/issues/21841 is fixed
-  if (user.value) {
-    console.log('navigate to / !')
+  // if (user.value) {
+  //   console.log('navigate to / !')
     // return navigateTo('/')
-  }
-})
+//   }
+// })
 
 const signInWithOAuth = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
@@ -59,9 +62,9 @@ const signInWithOAuth = async () => {
 const signIn = async () => {
   const { error } = await supabase.auth.signInWithOtp({
     email: email.value,
-    // options: {
-    //   emailRedirectTo: 'http://localhost:3000/confirm',
-    // },
+    options: {
+      emailRedirectTo: joinURL(withoutTrailingSlash(SITE_URL), 'confirm'),
+    },
   })
   if (error) console.log(error)
 }

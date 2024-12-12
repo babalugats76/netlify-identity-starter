@@ -30,8 +30,12 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@pinia/nuxt', '@nuxtjs/supabase'],
-  supabase: {
-    key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl5bG5wcHBldWN3ZnJ0dGRjenhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM5NTM4MDEsImV4cCI6MjA0OTUyOTgwMX0.dBPE301_h-YmgmS1jZsyKvrAcL8PjT3MOYdbLfZgTuQ",
-    url: 'https://yylnpppeucwfrttdczxq.supabase.co',
-  }
+  runtimeConfig: {
+    public: {
+      SITE_URL: 'https://localhost:3000',
+      SUPABASE_URL: '',
+      SUPABASE_KEY: '',
+    },
+    SUPABASE_SECRET_KEY: '',
+  },
 });
