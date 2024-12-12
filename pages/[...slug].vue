@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div data-netlify-identity-menu></div>
     <NuxtLink to="/hello">
       Hello
     </NuxtLink>
