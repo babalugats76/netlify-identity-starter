@@ -2,6 +2,8 @@ declare module 'nuxt/schema' {
 
   interface RuntimeConfig {
     SUPABASE_SECRET_KEY: string
+    HAPIO_API_KEY: string
+    HAPIO_API_URL: string
     public: PublicRuntimeConfig
   }
 

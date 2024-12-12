@@ -31,11 +31,13 @@ export default defineNuxtConfig({
   },
   modules: ['@pinia/nuxt', '@nuxtjs/supabase'],
   runtimeConfig: {
+    HAPIO_API_KEY: '',
+    HAPIO_API_URL: '',
+    SUPABASE_SECRET_KEY: '',
     public: {
       SITE_URL: 'https://localhost:3000',
       SUPABASE_URL: '',
       SUPABASE_KEY: '',
     },
-    SUPABASE_SECRET_KEY: '',
   },
 });
