@@ -49,9 +49,9 @@ watchEffect(() => {
 const signInWithOAuth = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
-    options: {
-      redirectTo: 'http://localhost:3000/confirm',
-    },
+    // options: {
+    //   redirectTo: 'http://localhost:3000/confirm',
+    // },
   })
   if (error) console.log(error)
 }
@@ -59,9 +59,9 @@ const signInWithOAuth = async () => {
 const signIn = async () => {
   const { error } = await supabase.auth.signInWithOtp({
     email: email.value,
-    options: {
-      emailRedirectTo: 'http://localhost:3000/confirm',
-    },
+    // options: {
+    //   emailRedirectTo: 'http://localhost:3000/confirm',
+    // },
   })
   if (error) console.log(error)
 }
